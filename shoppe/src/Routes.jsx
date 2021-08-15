@@ -10,12 +10,18 @@ import MainLayout from './layouts/MainLayout/MainLayout'
 import UnauthenticatedGuard from './guards/UnauthenticatedGuard'
 import AuthenticatedGuard from './guards/AuthenticatedGuard'
 import User from './pages/User/User'
+import ProductDetail from './pages/ProductDetail/ProductDetail'
 export default function Routes() {
   return (
     <Switch>
       <Route path={path.home} exact>
         <MainLayout>
           <Home></Home>
+        </MainLayout>
+      </Route>
+      <Route path={path.productDetail} exact>
+        <MainLayout>
+          <ProductDetail></ProductDetail>
         </MainLayout>
       </Route>
       <Route path={path.login}>
