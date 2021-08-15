@@ -12,7 +12,6 @@ export default function Pagination({ pagination, filters }) {
     count: pagination.page_size || 0,
     page: pagination.page || 1
   })
-  console.log(items)
   const goToPrev = () => {
     if (pagination.page !== 1) {
       const _filters = { ...filters, page: pagination.page - 1 }

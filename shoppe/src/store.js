@@ -1,5 +1,4 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import { getDefaultNormalizer } from '@testing-library/react'
 import authReducer from './pages/Auth/auth.slice'
 
 const rootReducer = {
