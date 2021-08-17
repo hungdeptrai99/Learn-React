@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import * as S from './home.style'
 import FilterPanel from 'src/components/FilterPanel/FilterPanel'
 import SearchItemResult from 'src/components/SearchItemResult/SearchItemResult'
+import { Helmet } from 'react-helmet-async'
 import { useDispatch } from 'react-redux'
 import { getCategories, getProducts } from './home.slice'
 import { unwrapResult } from '@reduxjs/toolkit'
@@ -52,6 +53,9 @@ export default function Home() {
 
   return (
     <div>
+      <Helmet>
+        <title>MyShop Gia Hưng</title>
+      </Helmet>
       <S.Container className="container">
         <S.Side>
           <FilterPanel categories={categories} filters={filters}></FilterPanel>

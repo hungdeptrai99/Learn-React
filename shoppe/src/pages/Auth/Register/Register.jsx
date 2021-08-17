@@ -11,6 +11,7 @@ import ErrorMessage from 'src/components/ErrorMessage/ErrorMessage'
 import { useDispatch } from 'react-redux'
 import { register } from '../auth.slice'
 import { unwrapResult } from '@reduxjs/toolkit'
+import { Helmet } from 'react-helmet-async'
 
 export default function Register() {
   const {
@@ -54,6 +55,9 @@ export default function Register() {
   return (
     <div>
       <S.StyledRegister>
+        <Helmet>
+          <title>MyShop Gia Hưng</title>
+        </Helmet>
         <S.Container className="container">
           <S.Banner></S.Banner>
           <S.FormWrapper>
@@ -68,7 +72,7 @@ export default function Register() {
                     <InputText
                       type="email"
                       name="email"
-                      placeholder="email/Số điện thoại"
+                      placeholder="Email/Số điện thoại"
                       onChange={field.onChange}
                       value={getValues('email')}
                     />

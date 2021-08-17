@@ -11,6 +11,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '../auth.slice'
 import { unwrapResult } from '@reduxjs/toolkit'
+import { Helmet } from 'react-helmet-async'
 export default function Login() {
   const {
     control,
@@ -50,6 +51,9 @@ export default function Login() {
   return (
     <div>
       <S.StyledRegister>
+        <Helmet>
+          <title>MyShop Gia Hưng</title>
+        </Helmet>
         <S.Container className="container">
           <S.Banner></S.Banner>
           <S.FormWrapper>
@@ -64,7 +68,7 @@ export default function Login() {
                     <InputText
                       type="email"
                       name="email"
-                      placeholder="email/Số điện thoại"
+                      placeholder="Email"
                       onChange={field.onChange}
                       value={getValues('email')}
                     />
@@ -93,7 +97,7 @@ export default function Login() {
               </S.FormButton>
             </S.Form>
             <S.FormFooter>
-              <span>Bạn mới biết Shopee</span>
+              <span>Bạn mới biết MyShop</span>
               <Link to={path.register} className="link">
                 Đăng Ký
               </Link>

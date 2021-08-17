@@ -12,10 +12,6 @@ export const Container = styled.div`
 `
 
 export const Banner = styled.div`
-  background-image: url(https://cf.shopee.vn/file/3eb05faba777c6c5718c3bed9b0b4c43);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   flex: 0 0 50%;
   max-width: 50%;
 `

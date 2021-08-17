@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import PropTypes from 'prop-types'
 import * as S from './productDetail.style'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -10,7 +9,8 @@ import ProductRating from 'src/components/ProductRating/ProductRating'
 import ProductQuantityController from 'src/components/ProductQuantityController/ProductQuantityController'
 import DOMPurify from 'dompurify'
 import { toast } from 'react-toastify'
-ProductDetail.propTypes = {}
+import { getCartPurchases } from '../Cart/cart.slice'
+import { Helmet } from 'react-helmet-async'
 
 function ProductDetail() {
   const [product, setProduct] = useState()
@@ -53,25 +53,26 @@ function ProductDetail() {
     }
   }
   const handleChangeQuantity = value => setQuantity(value)
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     const body = {
       product_id: product._id,
       buy_count: quantity
     }
-    dispatch(addToCart(body))
-      .then(unwrapResult)
-      .then(res => {
-        toast.success(res.message, {
-          position: 'top-center',
-          autoClose: 2000
-        })
-      })
+    const res = await dispatch(addToCart(body)).then(unwrapResult)
+    await dispatch(getCartPurchases()).then(unwrapResult)
+    toast.success(res.message, {
+      position: 'top-center',
+      autoClose: 2000
+    })
   }
 
   return (
     <div>
       {product && (
         <div className="container">
+          <Helmet>
+            <title>MyShop Gia Hưng</title>
+          </Helmet>
           <S.ProductBriefig>
             <S.ProductImages>
               <S.ProductImageActive>

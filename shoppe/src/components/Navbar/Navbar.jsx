@@ -6,7 +6,7 @@ import usePopover from 'src/hooks/usePopover'
 import { logout } from 'src/pages/Auth/auth.slice'
 import Popover from '../Popover/Popover'
 import * as S from './navbar.style'
-
+import client from 'src/assets/image/Client.jpg'
 export default function Navbar() {
   const authenticated = useAuthenticated()
   const profile = useSelector(state => state.auth.profile)
@@ -20,11 +20,11 @@ export default function Navbar() {
         {authenticated && (
           <li>
             <S.User onMouseEnter={showPopover} onMouseLeave={hidePopover}>
-              <S.UserImage src="https://cf.shopee.vn/file/b546ba2d84d4abb9c46edef570ff5d11_tn"></S.UserImage>
+              <S.UserImage src={client} alt="error"></S.UserImage>
               <S.UserName>{profile.name || profile.email}</S.UserName>
               <Popover active={activePopover}>
                 <S.UserLink to={path.user}>Tài khoản của tôi</S.UserLink>
-                <S.UserLink to="">Đơn mua</S.UserLink>
+                <S.UserLink to={path.purchase}>Đơn mua</S.UserLink>
                 <S.UserButton onClick={handleLogout}>Đăng xuất</S.UserButton>
               </Popover>
             </S.User>

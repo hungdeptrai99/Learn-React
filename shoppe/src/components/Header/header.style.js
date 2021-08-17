@@ -20,6 +20,13 @@ export const Logo = styled(Link)`
     height: 50px;
     fill: #fff;
   }
+  span {
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
 export const StyledForm = styled.form`
   display: flex;

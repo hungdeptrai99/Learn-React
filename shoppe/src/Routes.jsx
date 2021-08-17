@@ -11,6 +11,9 @@ import UnauthenticatedGuard from './guards/UnauthenticatedGuard'
 import AuthenticatedGuard from './guards/AuthenticatedGuard'
 import User from './pages/User/User'
 import ProductDetail from './pages/ProductDetail/ProductDetail'
+import CartLayout from './layouts/CartLayout/CartLayout'
+import Cart from './pages/Cart/Cart'
+
 export default function Routes() {
   return (
     <Switch>
@@ -43,6 +46,13 @@ export default function Routes() {
           <MainLayout>
             <User></User>
           </MainLayout>
+        </AuthenticatedGuard>
+      </Route>
+      <Route path={path.cart}>
+        <AuthenticatedGuard>
+          <CartLayout>
+            <Cart></Cart>
+          </CartLayout>
         </AuthenticatedGuard>
       </Route>
       <Route path={path.notFound}>
