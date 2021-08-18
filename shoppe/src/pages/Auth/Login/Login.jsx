@@ -56,9 +56,10 @@ export default function Login() {
         </Helmet>
         <S.Container className="container">
           <S.Banner>
-            <div>Tên Đăng Nhập :trangiahung100199@gmail.com</div>
             <div>
-              Mật Khẩu :<span>123456</span>
+              Tên Đăng Nhập : <span>trangiahung100199@gmail.com</span>
+              <br />
+              Mật Khẩu : <span>123456</span>
             </div>
           </S.Banner>
           <S.FormWrapper>

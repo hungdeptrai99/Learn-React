@@ -61,6 +61,7 @@ export default function Register() {
         <S.Container className="container">
           <S.Banner>
             <div>Tên Đăng Nhập :trangiahung100199@gmail.com</div>
+
             <div>
               Mật Khẩu :<span>123456</span>
             </div>

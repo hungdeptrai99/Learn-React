@@ -23,8 +23,14 @@ export const Banner = styled.div`
     background: #fff;
     width: 400px;
     padding: 10px;
-    span {
-      margin-left: 40px;
+    font-weight: 800;
+    span:last-child {
+      margin-left: 50px;
+      display: inline-block;
+      margin-top: 12px;
+    }
+    span:first-child {
+      margin-left: 10px;
     }
   }
 `
