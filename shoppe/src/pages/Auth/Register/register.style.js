@@ -14,6 +14,19 @@ export const Container = styled.div`
 export const Banner = styled.div`
   flex: 0 0 50%;
   max-width: 50%;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div {
+    background: #fff;
+    width: 400px;
+    padding: 10px;
+    span {
+      margin-left: 40px;
+    }
+  }
 `
 
 export const FormWrapper = styled.div`

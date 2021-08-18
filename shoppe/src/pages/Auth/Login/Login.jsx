@@ -55,7 +55,12 @@ export default function Login() {
           <title>MyShop Gia Hưng</title>
         </Helmet>
         <S.Container className="container">
-          <S.Banner></S.Banner>
+          <S.Banner>
+            <div>Tên Đăng Nhập :trangiahung100199@gmail.com</div>
+            <div>
+              Mật Khẩu :<span>123456</span>
+            </div>
+          </S.Banner>
           <S.FormWrapper>
             <S.FormTitle>Đăng Nhập</S.FormTitle>
             <S.Form onSubmit={handleSubmit(handleLogin)} noValidate>
